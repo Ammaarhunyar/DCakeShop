@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCake Shop</title>
+ <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgb(158, 67, 67);
+}
+
+.navbar {
+  display: flex;
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar input#menu-toggler {
+  display: none;
+}
+
+.navbar #hamburger-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .all-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .all-links li {
+  position: relative;
+  list-style: none;
+}
+
+.navbar .logo a {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+header a, footer a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #fff;
+  height: 100%;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+header a:hover, footer a:hover {
+  color: #ddd;
+}
+
+.homepage {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url("https://images7.alphacoders.com/129/1292925.jpg");
+  background-position: center 65%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.homepage .content {
+  display: flex;
+  height: 85%;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage .content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.homepage .content .text {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content a {
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.3);
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0 0;
+}
+
+section h2 {
+  font-size: 2rem;
+}
+
+section > p {
+  text-align: center;
+}
+
+section .cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-top: 50px;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+section.about {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.about .company-info {
+  margin-top: 30px;
+}
+
+.about h3 {
+  margin: 30px 0 10px;
+}
+
+.about .team {
+  text-align: left;
+  width: 100%;
+}
+
+.about .team ul {
+  padding-left: 20px;
+}
+
+section .cards .card {
+  background: #fff;
+  padding: 40px 15px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+  width: calc(100% / 3 - 30px);
+  text-align: center;
+}
+
+.portfolio .cards .card {
+  padding: 0 0 20px;
+}
+
+.services .card img {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.portfolio .card img {
+  width: 100%;
+  padding-bottom: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.cards .card p {
+  padding: 0 15px;
+  margin-top: 5px;
+}
+
+.about .row {
+  padding: 0 10px;
+}
+
+/* .contact .row {
+  margin: 60px 0 90px;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+/* .contact .row .col {
+  padding: 0 10px;
+  width: calc(100% / 2 - 50px);
+} */
+
+/* .contact .col p {
+  margin-bottom: 10px;
+} */
+
+/* .contact .col p i {
+  color: #7a7a7a;
+  margin-right: 10px;
+} */
+
+/* .contact form input {
+  height: 45px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #bfbfbf;
+} */
+
+/* .contact form textarea {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  height: 150px;
+  outline: none;
+  resize: vertical;
+  border: 1px solid #bfbfbf;
+} */
+
+/* .contact form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #333;
+  transition: 0.2s ease;
+} */
+
+/* .contact form button:hover {
+  background: #525252;
+} */
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #000;
+  padding: 20px 0;
+}
+
+footer div {
+  padding: 0 10px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer span {
+  color: #fff;
+}
+
+footer a {
+  padding: 0;
+}
+
+@media screen and (max-width: 860px) {
+  .navbar .all-links {
+    position: fixed;
+    left: -100%;
+    width: 300px;
+    display: block;
+    height: 100vh;
+    top: 75px;
+    background: #333;
+    transition: left 0.3s ease;
+  }
+
+  .navbar #menu-toggler:checked~.all-links {
+    left: 0;
+  }
+
+  .navbar .all-links li {
+    font-size: 18px;
+  }
+
+  .navbar #hamburger-btn {
+    display: block;
+  }
+
+  section > p {
+    text-align: center;
+  }
+
+  section .cards .card {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 30px;
+  }
+
+  .homepage .content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .homepage .content .text {
+    font-size: 17px;
+  }
+
+  .content a {
+    font-size: 17px;
+    padding: 9px 20px;
+  }
+
+  .contact .row {
+    flex-direction: column;
+  }
+
+  .contact .row .col {
+    width: 100%;
+  }
+
+  .contact .row .col:last-child {
+    margin-top: 40px;
+  }
+
+  footer a {
+    height: 0;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  section .cards .card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+ </style>
+
+  </head>
+  <body style="justify-content: center;">
+    <header>
+      <nav class="navbar">
+       
+        <h2 class="logo"><a href="main (1).html"> <img src="https://cdn-icons-png.freepik.com/512/5717/5717439.png" width="50px" height="50px">DCake Shop</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <li><a href="main (1).html">Home</a></li>
+          <li><a href="#services">Categories</a></li>
+          <li><a href="About-Us.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="homepage" id="home">
+      <div class="content">
+        <div class="text">
+          <h1>Welcome to DCake Shop</h1>
+          <p>
+            Discover top-quality Cakes With DCake <br> Unique Favours and Delightful Taste!</p>
+        </div>
+        <a href="#services">Our Categories</a>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2>Categories!</h2>
+      <p>Explore our wide range of delicious cakes.</p>
+      <ul class="cards">
+        <li class="card">
+          <a href="#Chocolate">
+          <img src="https://delizia.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1673695107-kitkat-min.jpg&w=256&q=75" alt="img">
+        </a>
+          <h3>Chocolate!</h3>
+          <p>Indulge in Decadence: Explore Our Divine Chocolate Creations</p>
+        </li>
+        <li class="card">
+          <a href="#Creamy">
+          <img src="data:image/jpeg;base64,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" alt="img">
+        </a>
+          <h3>Creamy!</h3>
+          <p>Whipped Perfection: Delight in our Creamy Confections at DCake Shop</p>
+        </li>
+        <li class="card">
+          <a href="#Velvet">
+          <img src="https://thescranline.com/wp-content/uploads/2023/06/RED-VELVET-CAKE-23-S-01-500x500.jpg" alt="img">
+        </a>
+          <h3>VelVet!</h3>
+          <p>Velvet Elegance: Experience Luxury in Every Bite with Our Velvet Cake Collection</p>
+        </li>
+        <li class="card">
+          <a href="#bd-cakes">
+          <img src="https://www.cakefeasta.com/wp-content/uploads/2018/09/Sprinkles.jpg" alt="img">
+        </a>
+          <h3>BirthDay Cakes!</h3>
+          <p>Elevate your celebrations with DCake Shop's delectable birthday masterpieces! </p>
+        </li>
+        <li class="card">
+          <a href="#an-cakes">
+          <img src="https://i.pinimg.com/736x/23/38/35/233835ec78b8ade28445f71255f1923c.jpg" alt="img">
+        </a>
+          <h3>Anniversary Cakes!</h2>
+            <p>Celebrate a Journey of Love: DCake Shop's Anniversary Confections!</p>
+        </li>
+        <li class="card">
+          <a href="#en-cakes">
+          <img src="https://sachascakes.com/cdn/shop/products/WeddingCakes1500x1500Video14.png?v=1666089774" alt="img">
+        </a>
+          <h3>Engagement Cakes!</h3>
+          <p>Seal the Promise: DCake Shop's Exquisite Engagement Cakes!</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="portfolio" id="Chocolate">
+      <h2>Choclate Cakes</h2>
+      <p>Indulge in Sweet Temptation: Explore the Divine World of Chocolate Delights at DCake Shop</p>
+      <ul class="cards">
+        <li class="card">
+          <a href="choc-layer-cake-cart.html" target="_blank"><img src="https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-superJumbo.jpg" height="350vh" alt="img"></a>
+          <h3>Chocolate Layers Cake</h3>
+          <p>Layered Perfection: Elevate Your Celebrations with the Richness of Our Chocolate Layers Cake.</p>
+        </li>
+        <li class="card">
+          <a href="dark-choc-cake-cart.html" target="_blank"><img src="https://amintiri.in/cdn/shop/products/DOUBLE_CHOCOLATE_WITH_CARAMELISED_PISTACHIOS.jpg?v=1613118673&width=990" height="350vh" alt="img"></a>
+          <h3>Dark Chocolate Cake</h3>
+          <p>Epicurean Delight: Dive into the Rich Indulgence of Our Dark Chocolate Cake – A Symphony for True Connoisseurs</p>
+        </li>
+        <li class="card">
+          <a href="choc-lava-cake-cart.html" target="_blank"><img src="https://gimmedelicious.com/wp-content/uploads/2020/01/Chocolate-Molten-Lava-Cakes-10.jpg" height="350vh" alt="img"></a>
+          <h3>Chocolate Lava Cake</h3>
+          <p>Molten Marvel: Experience Pure Decadence with Our Irresistible Chocolate Lava Cake - A Gooey Delight in Every Bite</p>
+        </li>
+        <li class="card">
+          <a href="choc-coffee-cake-cart.html" target="_blank"><img src="https://livforcake.com/wp-content/uploads/2019/10/white-chocolate-mocha-cake-thumb.jpg" height="350vh" alt="img"></a>
+          <h3>Chocolate Coffee Cake</h3>
+          <p>Sip and Savor: Elevate Your Moments with the Perfect Blend of Chocolate and Coffee in Our Irresistible Chocolate Coffee Cake</p>
+        </li>
+        <li class="card">
+          <a href="choc-crunch-cake-cart.html" target="_blank"><img src="https://lavopatisserie.co.uk/wp-content/uploads/2023/04/Ferrero-Crunch-Cake-scaled.jpg" height="350vh" alt="img"></a>
+          <h3>Chocolate Crunch Cake</h3>
+          <p>Crunchy Perfection: Indulge in Delightful Harmony with Our Chocolate Crunch Cake - a Symphony of Texture and Flavor</p>
+        </li>
+        <li class="card">
+          <a href="choc-kitkat-cake-cart.html" target="_blank"><img src="https://archiesonline.com/uploads/images/202209/img_1920x_6321ad9588dc98-14474303-34334171.jpg" height="350vh" alt="img"></a>
+          <h3>Chocolate KitKat Cake</h3>
+          <p>Deliciously Textured: Treat Yourself to the Irresistible Charm of Our Chocolate KitKat Cake - A Perfect Blend of Richness and Crispy Waffers</p>
+        </li>
+      </ul>
+    </section>
+
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+<section class="portfolio" id="Creamy">
+  <h2>Cream Cakes</h2>
+  <p>Have Rich Smoothness of our creamy Goodness!.</p>
+  <ul class="cards">
+    <li class="card">
+      <a href="berry-cream-cake-cart.html" target="_blank"><img src="https://drivemehungry.com/wp-content/uploads/2022/09/berry-cake-4.jpg" height="350vh" alt="img"></a>
+      <h3>Berry Cream Cake</h3>
+      <p>Bursting with Flavor: Indulge in the Exquisite Harmony of Berries and Cream with Our Berry Cream Cake - A Delightful Symphony for Your Taste Buds</p>
+    </li>
+    <li class="card">
+      <a href="cookies-cream-cake-cart.html" target="_blank"><img src="https://raysicecream.co.uk/wp-content/uploads/2020/10/Zp7hHOfg.jpg" height="350vh" alt="img"></a>
+      <h3>Cookies and Cream Cake</h3>
+      <p>Creamy Crumbles: Indulge in the Classic Combination with Our Cookies and Cream Cake - A Tempting Twist on a Timeless Favorite</p>
+    </li>
+    <li class="card">
+      <a href="vanilla-cream-cake-cart.html" target="_blank"><img src="https://bakingamoment.com/wp-content/uploads/2018/05/IMG_7832-vanilla-layer-cake-square.jpg" height="350vh" alt="img"></a>
+      <h3>Vanilla Cream Cake</h3>
+      <p>Pure Elegance: Delight in the Sublime Harmony of Vanilla and Cream with Our Exquisite Vanilla Cream Cake - A Timeless Treat for Every Occasion</p>
+    </li>
+  </ul>
+</section>
+
+   <!-- ---------------------------------------------------------------------------------------------------------- -->
+   <section class="portfolio" id="Velvet">
+    <h2>Valvet Cakes </h2>
+    <p>Experience Luxury in Every Bite with Our Velvet Cake Collection - Indulge in Richness, Texture, and Taste</p>
+    <ul class="cards">
+      <li class="card">
+        <a href="red-velvet-cake-cart.html" target="_blank"><img src="https://thescranline.com/wp-content/uploads/2023/06/RED-VELVET-CAKE-23-S-01.jpg" height="350vh" alt="img"></a>
+        <h3>Scarlet Indulgence</h3>
+        <p>Dive into the Luxurious Richness of Our Red Velvet Cake - A Decadent Delight for Every Celebration</p>
+      </li>
+      <li class="card">
+        <a href="blue-velvet-cake-cart.html" target="_blank"><img src="https://www.africanbites.com/wp-content/uploads/2023/05/IMG_9534.jpg" height="350vh" alt="img"></a>
+        <h3>True Blue Bliss</h3>
+        <p>Immerse Yourself in the Richness of Our Blue Velvet Cake - Where Indulgence Meets Uniqueness</p>
+      </li>
+      <li class="card">
+        <a href="black-velvet-cake-cart.html" target="_blank"><img src="https://sugarandsparrow.s3.us-west-2.amazonaws.com/flour/wp-content/uploads/2022/10/04140658/Black-Velvet-Cake-Recipe-9-1000x1323.jpeg" height="350vh" alt="img"></a>
+        <h3>Midnight Indulgence</h3>
+        <p>Experience the Dark Opulence of Our Black Velvet Cake - A Rich Delight for the Most Discerning Palates</p>
+      </li>
+    </ul>
+  </section>
+   <!-- ---------------------------------------------------------------------------------------------------------- -->
+   <section class="portfolio" id="bd-cakes">
+    <h2>Birthday Cakes</h2>
+    <p>Celebrate Life's Sweet Moments with DCake Shop: Where Every Slice is a Taste of Joy! #DCakeDelights #BirthdayBliss</p>
+    <ul class="cards">
+      <li class="card">
+        <a href="straw.cascade.html" target="_blank"><img src="https://i1.wp.com/sisterssansgluten.com/wp-content/uploads/2021/01/strawcake-WEB-1.jpg?w=864&ssl=1" height="350vh" alt="img"></a>
+        <h3>Strawberry Cascade Cake</h3>
+        <p>Sprinkled with love and adorned with luscious strawberries, your birthday cake from DCake Shop is a delightful masterpiece that tastes as good as it looks!</p>
+      </li>
+      <li class="card">
+        <a href="choco-berry.html" target="_blank"><img src="https://www.fabmood.com/inspiration/wp-content/uploads/2021/01/cake-ideas-19.jpg" height="350vh" alt="img"></a>
+        <h3>ChocoBerry Delight</h3>
+        <p>Indulge in the perfect harmony of rich chocolate layers and luscious strawberry cream with DCake Shop's 'ChocoBerry Delight' – where every bite is a celebration!</p>
+      </li>
+      <li class="card">
+        <a href="mocha.html" target="_blank"><img src="https://www.sucrecafe.com/wp-content/uploads/2020/02/chocolate-mocha-cake-e1614918308499-600x799.jpg" height="350vh" alt="img"></a>
+        <h3>Mocha Drizzle Delight</h3>
+        <p>Savor the rich blend of coffee-infused layers crowned with decadent chocolate drips, a heavenly creation from DCake Shop!</p>
+      </li>
+    </ul>
+  </section>
+   <!-- ---------------------------------------------------------------------------------------------------------- -->
+   <section class="portfolio" id="an-cakes">
+    <h2>Anniversary Cakes!</h2>
+    <p>Celebrate a Journey of Love: DCake Shop's Anniversary Confections! #AnniversaryBliss #DCakeLoveStory"</p>
+    <ul class="cards">
+      <li class="card">
+        <a href="blossom-cart.html" target="_blank"><img src="https://i.pinimg.com/736x/23/38/35/233835ec78b8ade28445f71255f1923c.jpg" height="350vh" alt="img"></a>
+        <h3>Creamy Blossom Cake</h3>
+        <p>Elegance meets romance in our Creamy Blossom Serenade – A symphony of flavors for your anniversary celebration! </p>
+      </li>
+      <li class="card">
+        <a href="gold-cart.html" target="_blank"><img src="https://sachascakes.com/cdn/shop/products/AnniversarycakeAug202281.png?v=1662554954" height="350vh" alt="img"></a>
+        <h3>Decadent GoldInfusion Cake</h3>
+        <p>Dive into decadence with our Decadent Gold Infusion Cake – Because anniversaries are golden moments in the tapestry of love!</p>
+      </li>
+      <li class="card">
+        <a href="elegance-cart.html" target="_blank"><img src="https://www.brides.com/thmb/vSL-h5tC_PaLnAnpGj2uLhQhRzE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/r-910520ebc18144d6965a43ea4cf99db5.jpg" height="350vh" alt="img"></a>
+        <h3>Vanilla Elegance Delight</h3>
+        <p>Embrace the sweet simplicity of love with our Vanilla Elegance Delight – Here's to layers of love!</p>
+      </li>
+      
+    </ul>
+  </section>
+   <!-- ---------------------------------------------------------------------------------------------------------- -->
+
+   <section class="portfolio" id="en-cakes">
+    <h2>Engagement Cakes!</h2>
+    <p>Seal the Promise: DCake Shop's Exquisite Engagement Cakes! #EngagementJoy #DCakeCelebratesLove</p>
+    <ul class="cards">
+      <li class="card">
+        <a href="ring-cart.html" target="_blank"><img src="https://sachascakes.com/cdn/shop/products/WeddingCakes1500x1500Video14.png?v=1666089774" height="350vh" alt="img"></a>
+        <h3>Ring of Eternity Proposal Cake</h3>
+        <p>Unveil the magic of your engagement with our 'Ring of Eternity Proposal Cake' – Say 'I do' to sweetness!</p>
+      </li>
+      <li class="card">
+        <a href="harmony-cart.html" target="_blank"><img src="https://i.pinimg.com/originals/8f/3e/0c/8f3e0cad4615dddb41302633ebc56161.jpg" height="350vh" alt="img"></a>
+        <h3>Golden Biscuit Harmony Cake</h3>
+        <p>Celebrate your sweet union with our 'Golden Biscuit Harmony Cake' – Here's to the beginning of your delicious journey together!</p>
+      </li>
+      <li class="card">
+        <a href="petals-cart.html" target="_blank"><img src="https://thecakeday.in/cdn/shop/products/87.png?v=1680192042&width=1445" height="350vh" alt="img"></a>
+        <h3>Vanilla Petals Embrace Cake</h3>
+        <p>Embark on the journey of love with our 'Vanilla Petals Embrace Cake' – Cheers to your sweet engagement!</p>
+      </li>
+      
+    </ul>
+  </section>
+
+   <!-- ---------------------------------------------------------------------------------------------------------- -->
+    <footer>
+      <div>
+        <span>Copyright © 2024 All right reserved to DCake Shop</span>
+        <span class="link">
+            <a href="#"></a>
+            <a href="#contact"></a>
+        </span>
+      </div>
+    </footer>
+
+  </body>
+</html>

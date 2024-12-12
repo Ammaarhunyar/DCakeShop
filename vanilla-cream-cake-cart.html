@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+}
+header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 5;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ background: rgb(158, 67, 67);
+}
+
+.navbar {
+ display: flex;
+ padding: 0 10px;
+ max-width: 1200px;
+ width: 100%;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.navbar input#menu-toggler {
+ display: none;
+}
+
+.navbar #hamburger-btn {
+ cursor: pointer;
+ display: none;
+}
+
+.navbar .all-links {
+ display: flex;
+ align-items: center;
+}
+
+.navbar .all-links li {
+ position: relative;
+ list-style: none;
+}
+
+.navbar .logo a {
+ display: flex;
+ align-items: center;
+ margin-left: 0;
+}
+
+header a, footer a {
+ margin-left: 40px;
+ text-decoration: none;
+ color: #fff;
+ height: 100%;
+ padding: 20px 0;
+ display: inline-block;
+}
+
+header a:hover, footer a:hover {
+ color: #ddd;
+ cursor: pointer;
+
+}
+@media screen and (max-width: 860px) {
+ .navbar .all-links {
+   position: fixed;
+   left: -100%;
+   width: 300px;
+   display: block;
+   height: 100vh;
+   top: 75px;
+   background: #333;
+   transition: left 0.3s ease;
+ }
+
+ .navbar #menu-toggler:checked~.all-links {
+   left: 0;
+ }
+
+ .navbar .all-links li {
+   font-size: 18px;
+ }
+
+ .navbar #hamburger-btn {
+   display: block;
+ }
+}
+footer{
+   background-color: #333;
+   color: #fff;
+   padding: 20px;
+   text-align: center;
+}
+footer p{
+   font-size: 14px;
+}
+/* ________________________________________ */
+.btn:hover{
+        background-color: rgb(158, 67, 67);
+    }
+.img{
+    max-width: 100%;
+    min-width: 20%;    
+}
+img:hover {
+transform: scale(1.2);
+padding: 15px;
+} 
+.card{
+display: table;
+}
+hr{
+        border: 1px solid red;
+    }
+
+</style>
+</head>
+<body style="justify-content: center;">
+  <header>
+    <nav class="navbar">
+     
+      <h2 class="logo"><a href="main (1).html"> <img src="https://cdn-icons-png.freepik.com/512/5717/5717439.png" width="50px" height="50px">DCake Shop</a></h2>
+      <input type="checkbox" id="menu-toggler">
+      <label for="menu-toggler" id="hamburger-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </label>
+      <ul class="all-links">
+        <li><a href="main (1).html">Home</a></li>
+        <li><a href="main (1).html">Categories</a></li>
+        <li><a href="About-Us.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+        <div class="py-5"></div>
+
+    <div class="container">
+    <div class="row">
+    <div class="col-md-10 col-11 mx-auto mt-5" >
+    <div class="row m-5 gx-3" >
+    <!-- left side div -->
+    <div class="card border border-warning border-5 shadow p-5" style="height: 450px;">
+    <h1 class="py-2 font-weight-bold text-center">Cart </h1>
+    <hr class="my-3">
+    <div class="row">
+    <!-- cart images div -->
+    <div class="col-md-5 col-11 mx-auto d-flex justify-content-center align-items-center product_img">
+    <a href="zoom-vanilla.html" target="_blank"><img src="https://bakingamoment.com/wp-content/uploads/2018/05/IMG_7832-vanilla-layer-cake-square.jpg" width="350px"  height="290vh"></a>
+  </div>
+    <!-- <div id="fullImageView"></div> -->
+    
+    <!-- cart product details -->
+    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+    <div class="row">
+    <!-- product name  -->
+    <div class="col-12 card-title">
+    <h1 class="mb-2 product_name">Vanilla Cream Cake</h1>
+  
+    </div>
+    <!-- _______________________________________________________________________________ -->
+
+    <!-- quantity inc dec -->
+    <div class="row py-3">
+    <div class="col-4">
+    <ul class="pagination justify-content-right set_quantity" >
+    <li class="page-item">
+    <button class="page-link" style="border: 2px solid brown;" onclick="decreaseNumber('textbox','itemval')">
+    <i class="fa fa-minus"></i> </button>
+    </li>
+    <li class="page-item"><input type="text" name="" style="width: 100px; border-top: 2px solid brown; border-left: 2px solid brown; border-bottom: 2px solid brown;" class="page-link" value="1" id="textbox" >
+    </li>
+    <li class="page-item">
+    <button class="page-link" style="border: 2px solid brown;" onclick="increaseNumber('textbox','itemval')"> <i class="fa fa-plus"></i></button>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+    <!-- //remover move and price -->
+    <div class="row">
+    <div class="col-12 d-flex justify-content-between ">
+    <p><input type="checkbox"> EGGLESS</p>
+    </div>
+    <div class="col-12 d-flex justify-content-start">
+    <h3>Rs.<span id="itemval"> 2200 </span></h3>
+    </div>
+    </div>
+    <!-- ***MODAL IS FOR POP_UP -->
+
+    <!-- Button trigger modal(toogle is for when we press close & cross button it will close the popup) -->
+<button type="button" class="btn btn-outline-danger btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Continue To Checkout
+  </button>
+  
+  <!-- Modal (we call id without # sign, fade for faded background when popup generate)-->
+  <div class="modal fade" id="exampleModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Total Amount</h5>
+        </div>
+        <div class="modal-body">
+            <div class="price_indiv d-flex justify-content-between">
+            <p>Product amount</p>
+            <p>Rs.<span id="product_total_amt">2200</span></p>
+            </div>
+            <div class="price_indiv d-flex justify-content-between">
+            <p>Shipping Charge</p>
+            <p>Rs.<span id="shipping_charge">200</span></p>
+            </div>
+            <hr>
+            <div class="total-amt d-flex justify-content-between font-weight-bold">
+                <p>Total amount</p>
+                <p>Rs.<span id="total_cart_amt">2400</span></p>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <a href="info-form.html" target="_blank" role="button" class="btn btn-outline-danger">PROCEED</a>
+        </div>
+      </div>
+    </div>
+</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br><br><br>
+    <footer>
+        <p>&copy; 2024 Cake Shop. All rights reserved.</p>
+    </footer>
+    <!-- ____________________________________________________________________________ -->
+    <script type="text/javascript">
+    
+    var product_total_amt = document.getElementById('product_total_amt');
+    var shipping_charge = document.getElementById('shipping_charge');
+    var total_cart_amt = document.getElementById('total_cart_amt');
+    var cake_wgt = document.getElementById("cake_wgt");
+    // var discountCode = document.getElementById('discount_code1');
+    const decreaseNumber = (incdec, itemprice) => {
+    var itemval = document.getElementById(incdec);
+    var itemprice = document.getElementById(itemprice);
+    console.log( itemprice.innerHTML);
+    
+    // console.log(itemval.value);
+    if(
+        itemval.value <= 1){
+    itemval.value = 1;
+    alert('less than 1 quantity is not allowed');
+    }else{
+    itemval.value = parseInt(itemval.value) - 1;
+    itemval.style.background = '#fff';
+    itemval.style.color = '#000';
+    itemprice.innerHTML  = parseInt(itemprice.innerHTML) - 2200;
+    product_total_amt.innerHTML  = parseInt(product_total_amt.innerHTML) - 2200;
+    total_cart_amt.innerHTML  = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+    }
+    }
+    const increaseNumber = (incdec, itemprice) => {
+    var itemval = document.getElementById(incdec);
+    var itemprice = document.getElementById(itemprice);
+    // console.log(itemval.value);
+    if(itemval.value >= 5){
+    itemval.value = 5;
+    alert('max 5 allowed');
+    itemval.style.background = '#fff';
+    itemval.style.color = 'red';
+    }else{
+    itemval.value = parseInt(itemval.value) + 1;
+    itemprice.innerHTML  = parseInt(itemprice.innerHTML ) + 2200;
+    product_total_amt.innerHTML  = parseInt(product_total_amt.innerHTML) + 2200;
+    total_cart_amt.innerHTML  = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+    }
+    }
+   
+
+// _______________________________________________________________________________
+   
+    </script>
+</body>
+</html>
